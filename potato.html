@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Potato Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4e1c1;
+            color: #5d4037;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #8d6e63;
+            color: white;
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .potato-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .potato-card:hover {
+            transform: scale(1.02);
+        }
+        .emoji-large {
+            font-size: 5rem;
+            margin: 10px 0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-style: italic;
+        }
+        button {
+            background-color: #af8905;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #8e6f04;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>The Definitive Potato Page</h1>
+        <p>In Spuds We Trust</p>
+    </header>
+
+    <div class="container">
+        <div class="emoji-large">🥔</div>
+        
+        <section class="potato-card">
+            <h2>Why Potatoes?</h2>
+            <p>Whether mashed, fried, boiled, or baked, the potato is the most versatile vegetable in the known universe. It has traveled from the Andes to the stars (potatoes were the first vegetable grown in space!).</p>
+        </section>
+
+        <div class="grid">
+            <div class="potato-card">
+                <h3>Russet</h3>
+                <p>The king of fries and fluffy baked goodness.</p>
+            </div>
+            <div class="potato-card">
+                <h3>Yukon Gold</h3>
+                <p>Buttery, smooth, and perfect for mashing.</p>
+            </div>
+            <div class="potato-card">
+                <h3>Red Bliss</h3>
+                <p>Firm and waxy, ideal for potato salads.</p>
+            </div>
+        </div>
+
+        <section class="potato-card">
+            <h2>Potato Fact of the Day</h2>
+            <p id="fact">Potatoes are about 80% water and 20% solid.</p>
+            <button onclick="newFact()">Get Another Fact</button>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Potato Enthusiasts International</p>
+    </footer>
+
+    <script>
+        const facts = [
+            "The world's largest potato weighed 18 pounds, 4 ounces!",
+            "There are over 4,000 different varieties of edible potatoes.",
+            "Potatoes belong to the Nightshade family, along with tomatoes and eggplants.",
+            "In 1995, potato plants were grown aboard the Space Shuttle Columbia.",
+            "The average American eats about 124 pounds of potatoes per year."
+        ];
+
+        function newFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').innerText = facts[randomIndex];
+        }
+    </script>
+</body>
+</html>
